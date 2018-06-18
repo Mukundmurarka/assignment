@@ -63,13 +63,16 @@ program
 	package patternstring;
 public class Patternstring {
     public static void main(String[] args) {
-        //char ch =97;
+       
         
         for(int i=0;i<=3;i++){
            char ch =97;
+         for(int n=3;n>=i;n--){
+               System.out.print(" ");
+           }
             for (int j=0;j<=i;j++){
                 
-                System.out.print(ch);
+                System.out.print(" "+ch);
                 
                 ch++;
                
@@ -88,16 +91,16 @@ import java.util.Scanner;
 public class Occurance {
     public static void main(String[] args) {
         Scanner str1=new Scanner(System.in);
-          System.out.println(" the first string is ");
+          System.out.println(" The first string is ");
         String s1= str1.next();
         Scanner str2=new Scanner(System.in);
-               System.out.println(" the second string is ");
+               System.out.println(" The second string is ");
         String s2= str2.next();
                if(s1.equals(s2)){
-            System.out.println(" the occurance of string");
+            System.out.println(" The occurance of string");
         }
         else{
-            System.out.println(" the occurence of string is not");
+            System.out.println(" The occurence of string is not");
         }
     }
     
@@ -117,7 +120,7 @@ public class Countword {
                 count++;
             }
            }
-        System.out.println("the number of word in sentance is ="+ count);
+        System.out.println("The number of word in sentance is ="+ count);
         
     }
     
