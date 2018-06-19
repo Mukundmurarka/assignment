@@ -1,0 +1,23 @@
+Q1.Make a text file 'abc.txt' and write multiple paths in it(say C:/Users/Test/video.mp4).Read the contents of the file and try to print the path from the file.
+program:-
+	package makeafile;
+import java.io.*;
+public class Makeafile {
+    public static void main(String[] args) {
+      File xyz= new File("D:\\murarka.txt");
+      boolean check=xyz.isFile();
+        System.out.println(check);
+        FileInputStream in;
+  try
+  {
+      in = new FileInputStream(xyz);
+      int c;
+      while((c=in.read()) != -1){
+          System.out.print(""+(char)c);
+       }
+  }catch(Exception e){
+      e.printStackTrace();
+  }
+    }
+    
+}
