@@ -1,0 +1,19 @@
+Q1.Use the text file abc.txt and write its contents in another file xyz.txt. Print the contents of xyz.txt for verification.
+program:-
+	package makeafile;
+import java.io. *;
+public class Makeafile {
+    public static void main(String[] args)  throws IOException{
+      File xyz1= new File("D:\\murarka.txt");
+      File xyz2=new File ("D:\\murarka1.txt");
+      FileReader in =new FileReader(xyz1);
+      FileWriter out = new FileWriter(xyz2);
+      int c;
+      while((c=in.read()) !=-1){
+          out.write((char)c);
+          
+      }
+      in.close();
+          out.close();
+       }
+   }	
