@@ -1,0 +1,49 @@
+Q1. Write a Java program to compare two sets and retain elements which are same on both sets. 
+program:-
+	package set;
+import java.util.*;
+class Set {
+    public static void main(String[] args) {
+        HashSet ar = new HashSet();
+        ar.add(2);
+        ar.add("a");
+           
+        ar.add("v");
+        ar.add("a");
+        System.out.println(ar);
+        HashSet ar2=new HashSet();
+        ar2.add("a");
+        ar2.add("b");
+           
+        ar2.add("v");
+        ar2.add(2);
+        ar.retainAll(ar2);
+        System.out.println("The intersection of both element are ="ar);
+    }
+    
+}
+
+	
+Q2. Write a Java program to associate the specified value with the specified key in a HashMap.
+program:-
+	package set;
+import java.util.HashMap;
+ class sweets_corner {
+    public static void main(String args[]){
+        HashMap sweet=new HashMap();
+        sweet.put("rasmalie", 500);
+        sweet.put("rasgulla", 160);
+        sweet.put("gulab jamun", 200);
+        sweet.put("ras madhuri", 350);
+        sweet.put("chena pais", 280);
+        sweet.put("barfi", 300);
+        sweet.put("rajbhog", 400);
+        sweet.put("sonpapri", 210);
+        sweet.put("jalebi", 320);
+       
+        sweet.replace("gulab jamun",200,500);
+        System.out.println(sweet);
+        
+    }
+    
+}
