@@ -1,6 +1,112 @@
 1.Create a program to input a Date from the user in dd/mm/yyyy format and print it in English.
 program:-
+package dob;
+import java.util.*;
+import java.util.Scanner;
 
+public class Dob {
+
+	public static HashMap<String, String> date = new HashMap<String, String>();
+	public static HashMap<String, String> month = new HashMap<String, String>();
+	public static HashMap<String, String> yearle = new HashMap<String, String>();
+	public static HashMap<String, String> yearRi = new HashMap<String, String>();
+
+	public static void genData() {
+		date.put("01", "First");
+		date.put("02", "Second");
+		date.put("03", "Third");
+		date.put("04", "Fourth");
+		date.put("05", "Fifth");
+		date.put("06", "Sixth");
+		date.put("07", "Seventh");
+		date.put("08", "Eighth");
+		date.put("09", "Nineth");
+		date.put("10", "Tenth");
+		date.put("11", "Eleventh");
+		date.put("12", "Tweleveth");
+		date.put("13", "Thirteenth");
+		date.put("14", "Fourteenth");
+		date.put("15", "Fifteenth");
+		date.put("16", "Sixteenth");
+		date.put("17", "Seventeenth");
+		date.put("18", "Eighteenth");
+		date.put("19", "Nineteenth");
+		date.put("20", "Twenty");
+		date.put("21", "Twenty First");
+		date.put("22", "Twenty Second");
+		date.put("23", "Twenty Third");
+		date.put("24", "Twenty Fourth");
+		date.put("25", "Twent Fifth");
+		date.put("26", "Twenty Sixth");
+		date.put("27", "Twenty Seventh");
+		date.put("28", "Twenty Eighth");
+		date.put("29", "Twenty Nineth");
+		date.put("30", "Thirty");
+		date.put("31", "Thirty First");
+
+		month.put("01", "January");
+		month.put("02", "February");
+		month.put("03", "March");
+		month.put("04", "April");
+		month.put("05", "May");
+		month.put("06", "June");
+		month.put("07", "July");
+		month.put("08", "August");
+		month.put("09", "September");
+		month.put("10", "October");
+		month.put("11", "November");
+		month.put("12", "December");
+
+		yearle.put("07", "Seven");
+		yearle.put("08", "Eight");
+		yearle.put("09", "Nine");
+		yearle.put("10", "Ten");
+		yearle.put("11", "Eleven");
+		yearle.put("12", "Tweleve");
+		yearle.put("13", "Thirteen");
+		yearle.put("14", "Fourteen");
+		yearle.put("15", "Fifteen");
+		yearle.put("16", "Sixteen");
+		yearle.put("17", "Seventeen");
+		yearle.put("18", "Eighteen");
+		yearle.put("19", "Nineteen");
+		yearle.put("20", "Twenty");
+		yearle.put("21", "Twenty One");
+		yearle.put("22", "Twenty Two");
+
+		yearRi.put("00", "Hundred");
+		yearRi.put("10", "Ten");
+		yearRi.put("20", "Twenty");
+		yearRi.put("30", "Thirty");
+		yearRi.put("40", "Forty");
+		yearRi.put("50", "Fifty");
+		yearRi.put("60", "Sixty");
+		yearRi.put("70", "Seventy");
+		yearRi.put("80", "Eighty");
+		yearRi.put("90", "Ninety");
+	}
+
+	public static String convert(String dateInput) {
+		String dd = dateInput.substring(0, 2);
+		String mm = dateInput.substring(3, 5);
+		String yL = dateInput.substring(6, 8);
+		String yR = dateInput.substring(8, 10);
+		return date.get(dd) + " " + month.get(mm) + " " + yearle.get(yL) + " " + yearRi.get(yR);
+	}
+
+	public static void main(String args[]) {
+
+		genData();
+                Scanner input = new Scanner(System.in);
+
+		System.out.println("enter the date");
+                String yy=input.nextLine();
+		System.out.println(convert(yy));
+
+
+
+	}
+}
  2. Create a generic Sorting function that can sort any type of array (primitive types).
 program:-
 package gen1;
