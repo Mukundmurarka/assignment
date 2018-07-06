@@ -1,0 +1,87 @@
+package filelistingapp;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import javax.swing.*;
+
+public class Filelistingapp {
+    static ArrayList store = new ArrayList();
+    static String disp = null;
+    static String show = null;
+    static void display( File[] arr,int index,int count){
+      if(index == arr.length)
+        return;
+        for(int j=0;j<count;j++)
+           store.add(""); 
+            if(arr[index].isFile())
+            {
+               store.add(arr[index].getAbsolutePath() ); 
+            }
+            else if(arr[index].isDirectory())
+            {
+                store.add(arr[index].getAbsolutePath()); 
+                 display(arr[index].listFiles(), 0, count+ 1);
+            }
+            display(arr, ++index, count);
+    }
+  
+    public static void main(String[] args) throws IOException {
+        JFrame z;
+        z=new JFrame();
+        String zzz=JOptionPane.showInputDialog(z,"Enter path");
+      File xyz= new File("C:\\Users\\Muku\\Desktop\\filesearch.txt");
+      boolean check=xyz.isFile();
+        System.out.println(check);
+        FileReader in;
+  try
+  {
+      in = new FileReader(xyz);
+       BufferedReader br=new BufferedReader(in);
+          for (int i=0;i<2;i++)
+          {
+              if(i==0)
+              {
+                   disp = br.readLine();
+              }
+             if(i==1)
+              {
+                  show = br.readLine();
+              }
+          }
+          {
+           File file = new File(disp);
+
+        if(file.exists() && file.isDirectory()) 
+        {
+                File arr[]=file.listFiles(); 
+            display(arr, 0, 0);
+        }
+       
+       }
+          {
+              File sw = new File(show);
+              FileWriter write =new FileWriter(sw);
+              try{
+                  Iterator abc=store.iterator();
+                  while(abc.hasNext())
+                  {
+                      String str2=(String) abc.next();
+                      write.write(str2);
+                     // System.out.println();
+              }
+                  write.close();
+                 // System.out.println();
+              }
+              catch(Exception e){
+                  e.printStackTrace();
+              }
+              System.out.println();
+          }
+  }
+  catch(IOException e){
+      e.printStackTrace();
+  }
+ 
+    }
+}     
+    
